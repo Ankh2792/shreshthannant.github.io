@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  font-family: "Brush Script MT", "Lucida Handwriting", "Segoe Script", "Apple Chancery", cursive;
+  background: linear-gradient(135deg, #ffc1d6 0%, #e6c7ff 52%, #c8a2ff 100%);
+  color: #4a1f2d;
+  overflow-x: hidden;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: #b5174b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero, .page {
+  min-height: 85vh;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  color: #9d174d;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: #9d174d;
+}
+
+p {
+  max-width: 720px;
+  margin: 16px auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  background: #c9184a;
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(201, 24, 74, 0.25);
+}
+
+.button:hover {
+  background: #a4133c;
+}
+
+.memory-grid, .reasons-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.memory-card, .card {
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  text-decoration: none;
+  color: #4a1f2d;
+  box-shadow: 0 10px 25px rgba(180, 23, 75, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-card:hover, .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(180, 23, 75, 0.18);
+}
+
+.memory-photo {
+  width: 90%;
+  max-width: 620px;
+  border-radius: 24px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  margin: 20px auto;
+  display: block;
+}
+
+.photo-placeholder {
+  border: 2px dashed #c9184a;
+  border-radius: 20px;
+  max-width: 620px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.photo-placeholder code {
+  background: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.caption-note {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.letter {
+  text-align: left;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.letter h1 {
+  text-align: center;
+}
+
+.heart-button {
+  font-size: 4rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  animation: pulse 1.4s infinite;
+}
+
+.surprise-message {
+  background: white;
+  border-radius: 24px;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(180, 23, 75, 0.12);
+}
+
+.hidden {
+  display: none;
+}
+
+.floating-hearts {
+  font-size: 2rem;
+  color: #c9184a;
+  letter-spacing: 12px;
+  margin-bottom: 20px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+
+/* Romantic animated background elements */
+body::before,
+body::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+body::before {
+  content: "♡   ❀   ❤   ✿   ♡   ❁   ❤   ❀   ♡   ✿   ❤   ❁";
+  white-space: pre-wrap;
+  word-spacing: 42px;
+  line-height: 3.4;
+  font-size: clamp(1.5rem, 3vw, 2.9rem);
+  color: rgba(201, 24, 74, 0.18);
+  text-shadow: 120px 90px rgba(255, 105, 180, 0.16),
+               260px 180px rgba(157, 23, 77, 0.12),
+               420px 45px rgba(201, 24, 74, 0.13),
+               560px 260px rgba(255, 143, 171, 0.16),
+               760px 120px rgba(157, 23, 77, 0.10),
+               920px 320px rgba(201, 24, 74, 0.12);
+  opacity: 0.9;
+  animation: floatHeartsFlowers 24s linear infinite;
+}
+
+body::after {
+  content: "✿      ♡      ❀      ❤      ❁      ♡      ✿";
+  white-space: pre-wrap;
+  word-spacing: 70px;
+  line-height: 4.8;
+  font-size: clamp(1.1rem, 2.4vw, 2.2rem);
+  color: rgba(178, 24, 85, 0.13);
+  transform: translateY(25vh);
+  animation: floatHeartsFlowersReverse 32s linear infinite;
+}
+
+nav,
+.hero,
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+nav a,
+.button,
+.memory-card,
+.card {
+  font-family: "Brush Script MT", "Lucida Handwriting", "Segoe Script", "Apple Chancery", cursive;
+}
+
+p,
+.memory-card p,
+.card p {
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+}
+
+.memory-card,
+.card,
+.surprise-message,
+.photo-placeholder {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 24, 74, 0.10);
+}
+
+.memory-photo,
+video.memory-photo {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes floatHeartsFlowers {
+  0% { transform: translate3d(-4vw, 105vh, 0) rotate(0deg); }
+  100% { transform: translate3d(4vw, -120vh, 0) rotate(8deg); }
+}
+
+@keyframes floatHeartsFlowersReverse {
+  0% { transform: translate3d(3vw, -110vh, 0) rotate(0deg); }
+  100% { transform: translate3d(-5vw, 115vh, 0) rotate(-10deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .heart-button {
+    animation: none;
+  }
+}
